@@ -1,7 +1,12 @@
-//clase autorreferenciada
-
-public class Node {
-	String name; //campo de datos
-	Node previous; //campo enlace
-    Node next;   //campo enlace
+/**
+ * Creación del nodo y los enlaces.
+ * 
+ * @author (Miranda Patricia Pérez Camelo) 
+ * @version (Noviembre 27, 2023)
+ */
+public class Node
+{
+    Object name; //valor del nodo
+    Node next; //enlace siguiente
+    Node previous; //enlace anterior
 }
