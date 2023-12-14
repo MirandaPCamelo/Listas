@@ -1,71 +1,64 @@
 import java.util.Scanner;
-public class UsaLista{
+/**
+ * Main.
+ * 
+ * @author (Miranda Patricia Pérez Camelo) 
+ * @version (Noviembre 27, 2023)
+ */
+public class Main
+{
+    // instance variables - replace the example below with your own
     static Scanner lectura = new Scanner(System.in);
-    public static void main(String[] args){
-        ListaSimple lista = new ListaSimple();
-
-        lista.insertaPrimerNodo("H");
-        lista.insertaAntesPrimerNodo("O");
-        lista.insertaAlFinal("Y");
-        lista.insertaEntreNodos("R", "A");
-        lista.imprimir();
+    /**
+     * Llama a los métodos de la clase ListasEnlazadas para ejecutarlos
+     */
+    public static void main (String[] args)
+    {
+        // llama a los métodos de la clase "ListasEnlazadas"
+        ListasEnlazadas lista = new ListasEnlazadas();
+        
+        System.out.println("insertarPrimerNodo");
+        lista.insertarPrimerNodo("I3A");
         System.out.print(lista);
+        System.out.println("");
         
+        System.out.println("insertaAntesPrimerNodo");
+        lista.insertaAntesPrimerNodo("Miranda");
+        System.out.print(lista);
+        System.out.println("");
         
-        //Método buscarNodoPorValor
-        System.out.println("--Buscar un nodo por el valor de su campo clave y devolver una referencia--");
-        System.out.println("Proporciona la clave del nodo");
-        String valorBuscado = lectura.nextLine();
-        Node nodoEncontrado = lista.buscarNodoPorValor(valorBuscado);
-
-        if (nodoEncontrado != null) {
-            System.out.println("Nodo encontrado con valor " + valorBuscado);
-        } else {
-            System.out.println("Nodo no encontrado con valor " + valorBuscado);
-        }
+        System.out.println("insertaAlFinal");
+        lista.insertaAlFinal("Estructura de datos");
+        System.out.print(lista);
+        System.out.println("");
         
-        //Imprimir la lista antes de la inserción
-        System.out.println("Lista antes de la inserción:");
+        System.out.println("insertaEntreNodos");
+        lista.insertaEntreNodos("Pérez","Miranda");
+        System.out.print(lista);
+        System.out.println("");
+        
+        System.out.println("imprimir");
         lista.imprimir();
-
-        //Método insertarDespuesDeNodo
-        System.out.println("--Buscar un nodo por su campo clave e insertar un nuevo nodo después de él--");
-        System.out.println("Proporciona la clave del nodo");
-        String valorBuscado2 = lectura.nextLine();
-        String nuevoNombre = "NuevoNodo";
-
-        boolean exitoInsercion = lista.insertarDespuesDeNodo(valorBuscado2, nuevoNombre);
-
-        //Imprimir la lista después de la inserción
-        System.out.println("\nLista después de la inserción:");
-        lista.imprimir();
-
-        if (exitoInsercion) {
-            System.out.println("Inserción exitosa después de " + valorBuscado2);
-        } else {
-            System.out.println("No se pudo encontrar el nodo " + valorBuscado2 + " para la inserción.");
-        }
+        System.out.println("");
         
-        //Método intercambiarNodos
-        System.out.println("--Intercambiar un nodo por otro buscado.--");
-        System.out.println("Proporciona el nodo 1 a intercambiar");
-        String nodo1 = lectura.nextLine();
-        System.out.println("Proporciona el nodo 2 a intercambiar");
-        String nodo2 = lectura.nextLine();
- 
-
-        boolean exitoIntercambio = lista.intercambiarNodos(nodo1, nodo2);
-
-        //Imprimir la lista después del intercambio
-        System.out.println("\nLista después del intercambio:");
-        lista.imprimir();
-
-        if (exitoIntercambio) {
-            System.out.println("Intercambio exitoso entre " + nodo1 + " y " + nodo2);
-        } else {
-            System.out.println("No se pudo realizar el intercambio. Uno o ambos nodos no encontrados.");
-        }
+        //llama a los métodos de la clase "ListasLigadasSimplesTarea"
+        System.out.println("buscarNodoPorValor");
+        Node nodoBuscado = lista.buscarNodoPorValor("Miranda");
+        System.out.println(nodoBuscado.name);
+        //System.out.print(lista);
+        System.out.println("");
+        
+        System.out.println("insertarDespuesDeNodo");
+        lista.insertarDespuesDeNodo("Estructura de datos","Listas ligadas simples");
+        System.out.print(lista);
+        System.out.println("");
+        
+        System.out.println("intercambiarNodos");
+        lista.intercambiarNodos("Listas ligadas simples","I3A");
+        System.out.print(lista);
+        System.out.println("");
+        
+        System.out.println("Lista Ligada Simple:");
+        System.out.print(lista); //imprime la lista
     }
-
-
 }
